@@ -1,0 +1,100 @@
+project_name,color,task_title,task_priority,is_complete
+Epsilon Drive,#FFD700,Optimize accessibility audit,Low,false
+Epsilon Drive,#FFD700,Analyse dashboard,High,false
+Epsilon Drive,#FFD700,Document payment gateway,Critical,false
+Delta Project,#FF33A8,Design user profile,Low,true
+Theta Build,#7B68EE,Analyse API endpoints,Low,true
+Alpha Launch,#FF5733,Refactor payment gateway,Low,false
+Gamma Initiative,#3357FF,Develop CI/CD pipeline,Medium,false
+Theta Build,#7B68EE,Document dashboard,Low,false
+Delta Project,#FF33A8,Refactor database schema,Critical,true
+Delta Project,#FF33A8,Optimize authentication flow,Medium,false
+Iota Release,#20B2AA,Review accessibility audit,Low,false
+Delta Project,#FF33A8,Optimize mobile layout,Medium,false
+Zeta Platform,#00CED1,Integrate UI components,Low,true
+Epsilon Drive,#FFD700,Integrate accessibility audit,Critical,true
+Eta Campaign,#FF6347,Optimize payment gateway,Medium,true
+Epsilon Drive,#FFD700,Deploy accessibility audit,Low,false
+Theta Build,#7B68EE,Optimize accessibility audit,Medium,false
+Gamma Initiative,#3357FF,Integrate notification system,Critical,false
+Iota Release,#20B2AA,Integrate data pipeline,Low,false
+Delta Project,#FF33A8,Integrate unit tests,High,false
+Zeta Platform,#00CED1,Design data pipeline,Low,true
+Alpha Launch,#FF5733,Review API endpoints,High,false
+Kappa Suite,#FF8C00,Optimize unit tests,Medium,false
+Alpha Launch,#FF5733,Test search feature,Medium,true
+Eta Campaign,#FF6347,Refactor dashboard,High,false
+Iota Release,#20B2AA,Deploy mobile layout,Medium,true
+Delta Project,#FF33A8,Refactor database schema,Medium,true
+Epsilon Drive,#FFD700,Test accessibility audit,Medium,true
+Zeta Platform,#00CED1,Analyse unit tests,Medium,true
+Zeta Platform,#00CED1,Refactor CI/CD pipeline,Critical,false
+Iota Release,#20B2AA,Test notification system,High,false
+Eta Campaign,#FF6347,Refactor mobile layout,Critical,true
+Beta Rollout,#33FF57,Deploy payment gateway,Critical,true
+Beta Rollout,#33FF57,Document data pipeline,Low,true
+Beta Rollout,#33FF57,Optimize data pipeline,Critical,true
+Alpha Launch,#FF5733,Analyse payment gateway,Medium,true
+Epsilon Drive,#FFD700,Design admin panel,Medium,false
+Eta Campaign,#FF6347,Integrate search feature,Critical,true
+Alpha Launch,#FF5733,Refactor authentication flow,Medium,false
+Eta Campaign,#FF6347,Refactor dashboard,High,false
+Zeta Platform,#00CED1,Refactor database schema,Low,false
+Gamma Initiative,#3357FF,Refactor security audit,High,true
+Zeta Platform,#00CED1,Develop CI/CD pipeline,Critical,true
+Epsilon Drive,#FFD700,Deploy unit tests,High,false
+Epsilon Drive,#FFD700,Deploy search feature,Low,true
+Delta Project,#FF33A8,Develop search feature,Critical,true
+Beta Rollout,#33FF57,Review admin panel,Critical,true
+Theta Build,#7B68EE,Optimize error handling,Medium,true
+Iota Release,#20B2AA,Design CI/CD pipeline,High,true
+Theta Build,#7B68EE,Refactor admin panel,Critical,true
+Delta Project,#FF33A8,Integrate dashboard,Low,false
+Kappa Suite,#FF8C00,Test authentication flow,Low,false
+Iota Release,#20B2AA,Review security audit,High,true
+Gamma Initiative,#3357FF,Review reports module,Critical,false
+Alpha Launch,#FF5733,Review admin panel,Low,false
+Gamma Initiative,#3357FF,Develop data pipeline,Medium,false
+Gamma Initiative,#3357FF,Analyse dashboard,Critical,false
+Theta Build,#7B68EE,Integrate notification system,High,true
+Eta Campaign,#FF6347,Analyse user profile,Critical,true
+Theta Build,#7B68EE,Design unit tests,Medium,true
+Gamma Initiative,#3357FF,Integrate performance tuning,Low,false
+Delta Project,#FF33A8,Design security audit,Medium,true
+Eta Campaign,#FF6347,Refactor notification system,Critical,true
+Kappa Suite,#FF8C00,Optimize dashboard,Critical,true
+Iota Release,#20B2AA,Analyse mobile layout,Low,true
+Beta Rollout,#33FF57,Review database schema,Critical,true
+Epsilon Drive,#FFD700,Design performance tuning,Low,false
+Eta Campaign,#FF6347,Design user profile,High,false
+Beta Rollout,#33FF57,Review search feature,High,false
+Kappa Suite,#FF8C00,Deploy performance tuning,Critical,false
+Epsilon Drive,#FFD700,Design security audit,High,true
+Beta Rollout,#33FF57,Develop mobile layout,Medium,false
+Gamma Initiative,#3357FF,Analyse payment gateway,Low,false
+Epsilon Drive,#FFD700,Document data pipeline,Low,false
+Zeta Platform,#00CED1,Refactor security audit,Critical,false
+Iota Release,#20B2AA,Document CI/CD pipeline,Medium,false
+Iota Release,#20B2AA,Develop mobile layout,Critical,false
+Gamma Initiative,#3357FF,Test admin panel,High,true
+Iota Release,#20B2AA,Integrate onboarding flow,Critical,true
+Delta Project,#FF33A8,Integrate security audit,Medium,false
+Beta Rollout,#33FF57,Test unit tests,High,false
+Theta Build,#7B68EE,Develop authentication flow,Critical,false
+Theta Build,#7B68EE,Integrate notification system,High,false
+Beta Rollout,#33FF57,Develop mobile layout,Low,true
+Eta Campaign,#FF6347,Test user profile,Critical,true
+Zeta Platform,#00CED1,Optimize authentication flow,Low,true
+Iota Release,#20B2AA,Analyse dashboard,Critical,false
+Alpha Launch,#FF5733,Refactor notification system,Critical,true
+Alpha Launch,#FF5733,Develop reports module,Medium,false
+Kappa Suite,#FF8C00,Design unit tests,Medium,true
+Gamma Initiative,#3357FF,Review data pipeline,Medium,false
+Alpha Launch,#FF5733,Test payment gateway,Critical,false
+Delta Project,#FF33A8,Deploy mobile layout,Low,true
+Beta Rollout,#33FF57,Refactor dashboard,Critical,false
+Kappa Suite,#FF8C00,Develop dashboard,Critical,true
+Alpha Launch,#FF5733,Review API endpoints,Critical,false
+Alpha Launch,#FF5733,Refactor reports module,Low,false
+Zeta Platform,#00CED1,Analyse data pipeline,Low,false
+Zeta Platform,#00CED1,Deploy admin panel,High,false
