@@ -16,24 +16,30 @@ class HomeController extends Controller
         $tasks = Task::getAllTasks();
 
         // Get filters from request
-        $projectFilter = $request->input('projectFilter', 0);
-        $statusFilter = $request->input('statusFilter', '');
+        $projectFilter = $request->input('projectFilter', 'all');
+        $statusFilter = $request->input('statusFilter', 'all');
+        $priorityFilter = $request->input('priorityFilter', 'all');
 
         // Apply filters if provided
-        if ($projectFilter != 0 || $statusFilter != '') {
-            $tasksFilter = [];
+        $tasksFilter = [];
 
-            // Apply project filter if not set to all
-            if ($projectFilter != 'all') {
-                $tasksFilter['project'] = $projectFilter;
-            }
+        // Apply project filter if not set to all
+        if ($projectFilter != 'all') {
+            $tasksFilter['project'] = $projectFilter;
+        }
 
-            // Apply status filter if not set to all
-            if ($statusFilter != 'all') {
-                $tasksFilter['is_completed'] = ($statusFilter == 'completed') ? 1 : 0;
-            }
+        // Apply status filter if not set to all
+        if ($statusFilter != 'all') {
+            $tasksFilter['is_completed'] = ($statusFilter == 'completed') ? 1 : 0;
+        }
 
-            // Get tasks with applied filters
+        // Apply priority filter if not set to all
+        if ($priorityFilter != 'all') {
+            $tasksFilter['priority'] = (int) $priorityFilter;
+        }
+
+        // Get tasks with applied filters
+        if (!empty($tasksFilter)) {
             $tasks = Task::getAllTasksWithFilters($tasksFilter);
         }
 
@@ -43,6 +49,7 @@ class HomeController extends Controller
             'tasks' => $tasks,
             'projectFilter' => $projectFilter,
             'statusFilter' => $statusFilter,
+            'priorityFilter' => $priorityFilter,
         ]);
     }
 }

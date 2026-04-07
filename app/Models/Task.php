@@ -63,6 +63,10 @@ class Task extends Model
             $query->where('tasks.is_completed', $filters['is_completed']);
         }
 
+        if (isset($filters['priority'])) {
+            $query->where('tasks.priority', $filters['priority']);
+        }
+
         return $query->orderBy('tasks.priority', 'ASC')->get();
     }
 
