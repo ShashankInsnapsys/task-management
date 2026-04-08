@@ -68,10 +68,11 @@ class ProjectsController extends Controller
             abort(404, 'Project not found.');
         }
 
+        // Soft delete all dependent tasks first.
+        $project->tasks()->delete();
+
         // Soft delete the project
         $project->delete();
-
-        // In this part, all tasks dependent on the project should also be soft-deleted.
 
         // Redirect or show a message indicating successful deletion
         return redirect()->route('home.index');

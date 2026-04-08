@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Task;
 
 class Project extends Model
 {
@@ -62,5 +63,13 @@ class Project extends Model
     public function deleteProject()
     {
         return $this->delete();
+    }
+
+    /**
+     * Get the tasks that belong to the project.
+     */
+    public function tasks()
+    {
+        return $this->hasMany(Task::class, 'project');
     }
 }

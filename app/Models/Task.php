@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Project;
 
 class Task extends Model
 {
@@ -63,6 +64,10 @@ class Task extends Model
             $query->where('tasks.is_completed', $filters['is_completed']);
         }
 
+        if (isset($filters['priority'])) {
+            $query->where('tasks.priority', $filters['priority']);
+        }
+
         return $query->orderBy('tasks.priority', 'ASC')->get();
     }
 
@@ -92,5 +97,13 @@ class Task extends Model
     public function deleteTask()
     {
         return $this->delete();
+    }
+
+    /**
+     * Get the project that owns the task.
+     */
+    public function project()
+    {
+        return $this->belongsTo(Project::class, 'project');
     }
 }

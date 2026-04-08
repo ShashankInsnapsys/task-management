@@ -15,6 +15,7 @@ class TasksController extends Controller
         $validatedData = $request->validate([
             'project' => 'required|exists:projects,id',
             'name' => 'required|string',
+            'priority' => 'required|integer|in:1,2,3,4',
         ]);
 
         // Create a new task
@@ -22,7 +23,7 @@ class TasksController extends Controller
         $task = Task::createTask([
             'project' => $request->project,
             'name' => $request->name,
-            'priority' => 0,
+            'priority' => (int) $request->priority,
             'is_completed' => 0,
             'created_at' => $time,
             'updated_at' => $time,
@@ -47,12 +48,14 @@ class TasksController extends Controller
         $validatedData = $request->validate([
             'project' => 'required|exists:projects,id',
             'name' => 'required|string',
+            'priority' => 'required|integer|in:1,2,3,4',
         ]);
 
         // Update the task properties
         $task->updateTask([
             'project' => $request->project,
             'name' => $request->name,
+            'priority' => (int) $request->priority,
         ]);
 
         // Redirect or show a message indicating successful update
@@ -80,7 +83,7 @@ class TasksController extends Controller
 
     public function filter(Request $request)
     {
-        $filters = $request->only(['project', 'is_completed', 'search']);
+        $filters = $request->only(['project', 'is_completed', 'priority', 'search']);
 
         $tasks = Task::getAllTasksWithFilters($filters);
 

@@ -46,7 +46,7 @@
                     <form action="{{ route('home.index') }}" method="get">
                         <div class="row mt-2 mb-2">
                             @csrf
-                            <div class="col-3">
+                            <div class="col-2">
                                 <div class="form-group">
                                     <label for="filter-form-task-project" class="form-control-label">Project</label>
                                     <select name="projectFilter" class="form-control" id="filter-form-task-project">
@@ -57,7 +57,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="col-2">
                                 <div class="form-group">
                                     <label for="filter-form-task-status" class="form-control-label">Status</label>
                                     <select name="statusFilter" class="form-control" id="filter-form-task-status">
@@ -67,11 +67,23 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-2 my-auto">
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label for="filter-form-task-priority" class="form-control-label">Priority</label>
+                                    <select name="priorityFilter" class="form-control" id="filter-form-task-priority">
+                                        <option {{ ($priorityFilter ?? 'all') == 'all' ? 'selected' : '' }} value="all">All</option>
+                                        <option {{ ($priorityFilter ?? 'all') == 1 ? 'selected' : '' }} value="1">Low</option>
+                                        <option {{ ($priorityFilter ?? 'all') == 2 ? 'selected' : '' }} value="2">Medium</option>
+                                        <option {{ ($priorityFilter ?? 'all') == 3 ? 'selected' : '' }} value="3">High</option>
+                                        <option {{ ($priorityFilter ?? 'all') == 4 ? 'selected' : '' }} value="4">Critical</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3 my-auto">
                                 <button type="submit" class="my-auto btn bg-gradient-dark mt-2 w-100"><i class="fas fa-search" aria-hidden="true"></i>&nbsp;&nbsp;Filter
                                     Tasks</button>
                             </div>
-                            <div class="col-2 my-auto">
+                            <div class="col-3 my-auto">
                                 <a href="{{ route('home.index') }}" class="my-auto btn bg-gradient-danger mt-2 w-100"><i class="fas fa-times"
                                         aria-hidden="true"></i>&nbsp;&nbsp;Reset Filter</a>
                             </div>
@@ -92,6 +104,17 @@
                                                 <h6 class="mb-3 text-sm">{{ $task->name }}</h6>
                                                 <span class="mb-2 text-xs">Project Name: <span
                                                         class="text-dark font-weight-bold ms-sm-2">{{ $task->project_name }}</span></span>
+                                                <span class="mb-2 text-xs">Priority:
+                                                    @if ($task->priority == 1)
+                                                        <span class="badge badge-sm bg-gradient-info">LOW</span>
+                                                    @elseif($task->priority == 2)
+                                                        <span class="badge badge-sm bg-gradient-secondary">MEDIUM</span>
+                                                    @elseif($task->priority == 3)
+                                                        <span class="badge badge-sm bg-gradient-warning">HIGH</span>
+                                                    @elseif($task->priority == 4)
+                                                        <span class="badge badge-sm bg-gradient-danger">CRITICAL</span>
+                                                    @endif
+                                                </span>
                                                 <span class="mb-2 text-xs">Status:
                                                     @if ($task->is_completed)
                                                         <span class="badge badge-sm bg-gradient-success">COMPLETED</span>
@@ -153,6 +176,19 @@
                                                                         <option {{ $project->id == $task->project ? 'selected' : '' }} value="{{ $project->id }}">
                                                                             {{ $project->name }}</option>
                                                                     @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="edit-task-form-task-priority" class="form-control-label">Priority</label>
+                                                                <select name="priority" class="form-control" id="edit-task-form-task-priority">
+                                                                    <option {{ $task->priority == 1 ? 'selected' : '' }} value="1">Low</option>
+                                                                    <option {{ $task->priority == 2 ? 'selected' : '' }} value="2">Medium</option>
+                                                                    <option {{ $task->priority == 3 ? 'selected' : '' }} value="3">High</option>
+                                                                    <option {{ $task->priority == 4 ? 'selected' : '' }} value="4">Critical</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -397,7 +433,7 @@
         <div class="modal-dialog modal- modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-title-default">Add New Project</h6>
+                    <h6 class="modal-title" id="modal-title-default">Add New Task</h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -409,7 +445,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="add-task-form-task-name" class="form-control-label">Task Name Name</label>
+                                    <label for="add-task-form-task-name" class="form-control-label">Task Name</label>
                                     <input class="form-control" id="add-task-form-task-name" name="name" type="text" required>
                                 </div>
                             </div>
@@ -423,6 +459,19 @@
                                         @foreach ($projects as $project)
                                             <option value="{{ $project->id }}">{{ $project->name }}</option>
                                         @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="add-task-form-task-priority" class="form-control-label">Priority</label>
+                                    <select name="priority" class="form-control" id="add-task-form-task-priority">
+                                        <option value="1">Low</option>
+                                        <option value="2" selected>Medium</option>
+                                        <option value="3">High</option>
+                                        <option value="4">Critical</option>
                                     </select>
                                 </div>
                             </div>
@@ -500,49 +549,8 @@
                     }
                 });
             });
-
-            // Drag and drop işlemi için sortable'ı etkinleştirme
-            var el = document.querySelector('.list-group');
-            var sortable = Sortable.create(el, {
-                animation: 150,
-                onEnd: function(evt) {
-                    var taskOrder = [];
-                    $('.task-item').each(function(index, element) {
-                        taskOrder.push($(element).data('task-id'));
-                    });
-
-                    $.ajax({
-                        url: '<?php echo route('tasks.updatePriority'); ?>',
-                        type: 'POST',
-                        data: {
-                            _token: '{{ csrf_token() }}',
-                            taskOrder: taskOrder
-                        },
-                        success: function(response) {
-                            if (response.success) {
-                                iziToast.success({
-                                    title: 'Successful',
-                                    message: 'Task order updated.',
-                                    position: 'topRight'
-                                });
-                            } else {
-                                iziToast.error({
-                                    title: 'Error',
-                                    message: 'An error occurred while updating the task sequence.',
-                                    position: 'topRight'
-                                });
-                            }
-                        },
-                        error: function(xhr) {
-                            iziToast.error({
-                                title: 'Error',
-                                message: 'An error occurred while updating the task sequence.',
-                                position: 'topRight'
-                            });
-                        }
-                    });
-                }
-            });
+            // Priority now represents business priority levels (1-4),
+            // so drag-and-drop ordering is intentionally disabled.
 
 
 
@@ -550,3 +558,4 @@
         });
     </script>
 @endsection
+
